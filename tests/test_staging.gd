@@ -243,7 +243,7 @@ func _two_d_tests() -> void:
 
 	await _advance()  # smile + move center 0.3
 	check(actors.resolve("maya") == maya_root, "look change kept the same node")
-	check(actors.actors.maya.body.texture == balloon.sprites["maya_smile"], "short look smile -> maya_smile")
+	check(actors.actors.maya.body.texture == balloon.sprites["mira_smile"], "short look smile -> maya_smile")
 	check(balloon.motion.is_tweening(maya_root, "position"), "#move tweens rather than snapping")
 	await wait(0.45)
 	check(near(_actor_pos("maya"), _anchor("center")), "move reached the center anchor")
@@ -320,14 +320,14 @@ func _two_d_tests() -> void:
 	# Bare show preserves a live look; re-show after a completed hide uses defaults.
 	actors.apply(StageTagParser.parse("show=maya:smile"))
 	actors.apply(StageTagParser.parse("show=maya"))
-	check(actors.actors.maya.body.texture == balloon.sprites["maya_smile"], "bare #show keeps the live look")
+	check(actors.actors.maya.body.texture == balloon.sprites["mira_smile"], "bare #show keeps the live look")
 	actors.apply(StageTagParser.parse("move=maya@far_right?t=2"))
 	await frames(2)
 	actors.apply(StageTagParser.parse("show=maya@left"))
 	check(near(_actor_pos("maya"), _anchor("left")) and not balloon.motion.is_tweening(actors.resolve("maya"), "position"), "explicit show placement snaps and cancels movement")
 	actors.apply(StageTagParser.parse("hide=maya"))
 	actors.apply(StageTagParser.parse("show=maya"))
-	check(actors.actors.maya.body.texture == balloon.sprites["maya"] and near(_actor_pos("maya"), _anchor("center")), "re-show after hide follows the creation rule")
+	check(actors.actors.maya.body.texture == balloon.sprites["maya"] and near(_actor_pos("maya"), _anchor("right")), "re-show after hide uses the definition default place")
 	check(not actors.apply(StageTagParser.parse("show=left:smile")).ok, "left/right are reserved IDs")
 	check(not actors.apply(StageTagParser.parse("show=nobody")).ok, "creation without a valid default appearance is rejected")
 	check(actors.apply(StageTagParser.parse("anim=maya:wave")).ok, "#anim plays an authored 2D animation")

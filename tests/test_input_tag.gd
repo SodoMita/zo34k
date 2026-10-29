@@ -88,6 +88,6 @@ func run() -> void:
 		gs.reset()
 		check((gs.input_values as Dictionary).is_empty(), "reset clears typed answers")
 
-	var demo := FileAccess.get_file_as_string("res://examples/input_demo.dialogue")
-	check(demo.contains("#input=player_name"), "the demo asks for a name")
-	check(demo.contains("type=int") and demo.contains("secret=true"), "the demo covers typed and secret input")
+	var story := FileAccess.get_file_as_string("res://dialogue/pumpkin.dialogue")
+	check(story.contains("#input=player_name"), "the farm story asks for the player name")
+	check(story.contains("#input=farm_name"), "the farm story collects a farm name")

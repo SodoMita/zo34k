@@ -20,7 +20,7 @@ func _ready() -> void:
 		"surprised": preload("res://assets/characters/tykvochka.webp"),
 		"blink": preload("res://assets/characters/tykvochka.webp"),
 		"thinking": preload("res://assets/characters/tykvochka.webp"),
-		"sad": preload("res://assets/characters/mira.webp"),
+		"sad": preload("res://assets/characters/tykvochka.webp"),
 	}
 	anim.animation_finished.connect(_on_animation_finished)
 	blink_timer.timeout.connect(_on_blink_timer_timeout)
