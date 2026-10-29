@@ -1,18 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
   <defs>
-    <linearGradient id="leafBody" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ff9a2a"/>
-      <stop offset="0.55" stop-color="#e67e22"/>
-      <stop offset="1" stop-color="#8b4513"/>
+    <linearGradient id="leaf" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#ffd17b"/>
+      <stop offset="0.5" stop-color="#f28a2c"/>
+      <stop offset="1" stop-color="#a74411"/>
     </linearGradient>
-    <radialGradient id="leafGlint" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#ffd66b" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#ffd66b" stop-opacity="0"/>
-    </radialGradient>
   </defs>
-  <path d="M64 14 C 64 14 96 38 96 68 A 32 32 0 1 1 32 68 C 32 38 64 14 64 14 Z"
-        fill="url(#leafBody)" stroke="#5a2d0c" stroke-width="2" stroke-opacity="0.6"/>
-  <ellipse cx="50" cy="72" rx="8" ry="13" fill="#ffd66b" opacity="0.55" transform="rotate(-18 50 72)"/>
-  <ellipse cx="76" cy="88" rx="5" ry="7" fill="url(#leafGlint)" transform="rotate(18 76 88)"/>
-  <path d="M64 14 L64 8" stroke="#4a2510" stroke-width="3" stroke-linecap="round"/>
+  <path d="M64 112 C58 93 49 78 27 72 C38 69 42 61 39 46 C51 54 60 51 64 28 C69 50 79 54 91 45 C88 61 94 68 105 72 C82 78 71 93 64 112Z" fill="url(#leaf)" stroke="#6c3213" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M64 104 C64 82 63 62 64 35 M64 75 L43 59 M65 70 L85 57 M64 91 L48 76 M65 90 L81 75" fill="none" stroke="#6c3213" stroke-opacity=".6" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M64 111 Q70 119 77 122" fill="none" stroke="#52602b" stroke-width="5" stroke-linecap="round"/>
 </svg>

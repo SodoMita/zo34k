@@ -47,6 +47,7 @@ _data = {
 [resource]
 script = ExtResource("1_def")
 id = "ken"
+sprite_prefix = "tykvochka"
 default_appearance = "tykvochka"
 default_place = "left"
 height_2d = 0.65

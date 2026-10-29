@@ -1,8 +1,7 @@
 class_name SettingsMenu
 extends PanelContainer
-## Milk-glass settings menu. ONE authored scene (settings_menu.tscn) is used by the
-## title screen AND the in-game dialogue balloon, so the player always meets the
-## same settings with the same look (shared theme: assets/ui/milk_glass_theme.tres).
+## One authored settings scene is shared by the title screen and VN balloon,
+## keeping controls and persistence consistent across both entry points.
 ##
 ## Who drives the controls:
 ##  * In-game: vn_balloon.gd. Its instance sets drive_settings = false and the
@@ -319,7 +318,7 @@ func _load_from_store() -> void:
 		_set_range("ResWidthSpin", float(data.res_w), false)
 		_set_range("ResHeightSpin", float(data.res_h), false)
 		_select_resolution_item(int(data.res_w), int(data.res_h))
-	_sync_rotation(int(data.get("rotation", 0)))
+	sync_rotation(int(data.get("rotation", 0)))
 	_apply_saved_key_bindings(data.get("key_bindings", {}))
 	_refresh_key_labels()
 	_loading = false
@@ -344,7 +343,7 @@ func _on_option_selected(index: int, option_name: String) -> void:
 
 
 func _on_rotation_pressed(button_name: String) -> void:
-	_sync_rotation(ROTATIONS[button_name])
+	sync_rotation(ROTATIONS[button_name])
 	_store({"rotation": ROTATIONS[button_name]})
 
 
@@ -463,7 +462,7 @@ func _select_resolution_item(w: int, h: int) -> void:
 	option.select(option.item_count - 1)
 
 
-func _sync_rotation(deg: int) -> void:
+func sync_rotation(deg: int) -> void:
 	deg = preload("res://scenes/display_rotation.gd").normalize(deg)
 	for n: String in ROTATIONS:
 		var b := _ctl(n) as BaseButton

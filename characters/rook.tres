@@ -47,6 +47,7 @@ _data = {
 [resource]
 script = ExtResource("1_def")
 id = "rook"
+sprite_prefix = "scarecrow"
 default_appearance = "scarecrow"
 default_place = "center"
 animations_2d = SubResource("AnimationLibrary_2d")

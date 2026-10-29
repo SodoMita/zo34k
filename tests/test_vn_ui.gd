@@ -135,7 +135,28 @@ func choose(i: int) -> DialogueLine:
 	return await await_line_change()
 
 
+func _test_settings_store_validation() -> void:
+	var store := get_tree().root.get_node("SettingsStore")
+	var original: Dictionary = store.data.duplicate(true)
+	store.data = {
+		"fullscreen": "false",
+		"language": "xx",
+		"ui_scale": 0.1,
+		"vol_music": 140,
+		"rotation": 450,
+		"text_speed": "fast",
+	}
+	store._normalize_data()
+	check(not store.data.has("fullscreen") and not store.data.has("language") and not store.data.has("text_speed"),
+		"settings discard values whose persisted types or option values are invalid")
+	check(is_equal_approx(float(store.data.ui_scale), 0.5) and is_equal_approx(float(store.data.vol_music), 100.0),
+		"settings clamp UI scale and volume to supported ranges")
+	check(int(store.data.rotation) == 90, "settings normalize rotation to a supported quarter turn")
+	store.data = original
+
+
 func run() -> void:
+	_test_settings_store_validation()
 	gs = get_tree().root.get_node("GameState")
 	# Wipe saves and settings so the run is deterministic.
 	var saves_dir: DirAccess = DirAccess.open("user://saves")
