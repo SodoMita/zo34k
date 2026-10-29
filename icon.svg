@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Background - warm autumn brown -->
+  <rect width="128" height="128" rx="18" fill="#2a1607"/>
+  <!-- Pumpkin body -->
+  <ellipse cx="64" cy="78" rx="42" ry="36" fill="#ff7b1f" stroke="#8b3d0f" stroke-width="3"/>
+  <!-- Pumpkin ribs -->
+  <path d="M48 48 C46 62 44 78 48 108" stroke="#e85d04" stroke-width="3" stroke-linecap="round" opacity="0.6" fill="none"/>
+  <path d="M64 44 C64 62 64 78 64 112" stroke="#e85d04" stroke-width="3" stroke-linecap="round" opacity="0.6" fill="none"/>
+  <path d="M80 48 C82 62 84 78 80 108" stroke="#e85d04" stroke-width="3" stroke-linecap="round" opacity="0.6" fill="none"/>
+  <!-- Stem -->
+  <path d="M56 46 C58 30 66 28 70 46 Z" fill="#4a7c2e" stroke="#2d4a1e" stroke-width="2"/>
+  <path d="M62 38 C65 32 68 34 66 40" stroke="#6a9e3e" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Leaves -->
+  <ellipse cx="48" cy="42" rx="10" ry="6" fill="#5a8f2a" transform="rotate(-20 48 42)"/>
+  <ellipse cx="82" cy="44" rx="8" ry="5" fill="#5a8f2a" transform="rotate(20 82 44)"/>
+  <!-- Face - cute -->
+  <ellipse cx="52" cy="76" rx="7" ry="9" fill="#1a0e02"/>
+  <ellipse cx="76" cy="76" rx="7" ry="9" fill="#1a0e02"/>
+  <circle cx="54" cy="72" r="2.5" fill="#ffdeaa"/>
+  <circle cx="78" cy="72" r="2.5" fill="#ffdeaa"/>
+  <!-- Smile -->
+  <path d="M50 92 C56 100 70 100 76 92 C70 98 56 98 50 92 Z" fill="#1a0e02"/>
+  <!-- Cheeks -->
+  <ellipse cx="36" cy="84" rx="6" ry="4" fill="#ff9f45" opacity="0.5"/>
+  <ellipse cx="92" cy="84" rx="6" ry="4" fill="#ff9f45" opacity="0.5"/>
+  <!-- Top highlight -->
+  <ellipse cx="64" cy="58" rx="18" ry="8" fill="#ffaf4d" opacity="0.35"/>
+</svg>
