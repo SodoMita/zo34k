@@ -1,0 +1,28 @@
+using GameState
+
+~ start
+The afternoon light pools between the desks. Somewhere, a chalk tap-taps against the board. [#bg=pumpkin_field, #sprite=none:left, #sprite=none:right, #show=shadow@far_right, #music=calm]
+Rook: Another transfer student. Just what this school needed. [#sprite=rook:right, #focus=right, #voice=r1]
+Maya: H-hey! The bell hasn't even rung yet, I'm not late! [#sprite=maya_surprised:left, #focus=left, #voice=m1]
+Rook: The bell rang four minutes ago. [#focus=right, #voice=r2]
+Maya: ... [#sprite=maya_smile:left]
+Maya: Fine, you win, clock-watch person. I'm Alex. And you are? [#voice=m2]
+- Nice to meet you, i'm...
+    My name is[#input=player_name?placeholder=Your name&default=Alex&max=16]
+	Maya: {{player_name}}! That's a solid name. I'm Maya! [#sprite=maya_smile:left, #voice=m3]
+	do met_maya = true
+- I'd rather not say.
+	Maya: Ooh, the mysterious type. I'm Maya. I'll find out eventually. [#sprite=maya:left, #voice=m4]
+	do met_maya = true
+- (Stay silent)
+	Maya: ...You're fun to tease. I'm Maya. [#sprite=maya:left, #voice=m5]
+	do met_maya = true
+Rook: Enjoy the rooftop if you like. Everyone ends up there eventually. [#sprite=rook:right, #focus=right, #voice=r3]
+do met_rook = true
+=> rooftop
+
+~ rooftop
+Wind over the chain-link fence. The city glitters below like scattered coins. [#bg=festival, #sprite=none:left, #sprite=none:right, #music=warm]
+Maya: See? Told you the view was worth the stairs. [#sprite=maya_smile:left, #focus=left, #voice=m6]
+Rook: You brought a witness to my hiding spot. Unforgivable. [#sprite=rook_surprised:right, #focus=right, #voice=r4]
+=> END
