@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a1406"/>
+      <stop offset="0.45" stop-color="#4a2010"/>
+      <stop offset="0.8" stop-color="#6b3012"/>
+      <stop offset="1" stop-color="#3b1f0b"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.2" cy="0.18" r="0.4">
+      <stop offset="0" stop-color="#ff8c2f" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ff8c2f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="heroGlow" cx="0.68" cy="0.55" r="0.5">
+      <stop offset="0" stop-color="#ff8c2f" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#ff8c2f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="softOne" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b4513" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b4513" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#sky)"/>
+  <rect width="1280" height="720" fill="url(#sunGlow)"/>
+  <rect width="1280" height="720" fill="url(#heroGlow)"/>
+  <circle cx="1030" cy="620" r="200" fill="url(#softOne)"/>
+  <circle cx="240" cy="140" r="4" fill="#d4842a" opacity="0.7"/>
+  <circle cx="460" cy="90" r="3" fill="#e67e22" opacity="0.6"/>
+  <circle cx="720" cy="120" r="2.5" fill="#d4842a" opacity="0.55"/>
+  <circle cx="1080" cy="200" r="3" fill="#e67e22" opacity="0.6"/>
+  <circle cx="1180" cy="80" r="2" fill="#d4842a" opacity="0.5"/>
+  <circle cx="160" cy="420" r="2.5" fill="#e67e22" opacity="0.5"/>
+  <circle cx="380" cy="300" r="2" fill="#d4842a" opacity="0.45"/>
+  <circle cx="620" cy="380" r="2" fill="#e67e22" opacity="0.4"/>
+  <circle cx="900" cy="90" r="2.5" fill="#d4842a" opacity="0.5"/>
+  <circle cx="1240" cy="400" r="2" fill="#e67e22" opacity="0.45"/>
+  <circle cx="520" cy="520" r="2.5" fill="#d4842a" opacity="0.4"/>
+  <path d="M0 560 C 160 520, 320 600, 480 570 C 640 540, 800 610, 960 580 C 1120 550, 1280 605, 1280 605 L 1280 720 L 0 720 Z" fill="#5a2d0c" opacity="0.10"/>
+  <path d="M0 610 C 180 575, 340 650, 520 620 C 700 590, 860 655, 1040 625 C 1160 605, 1280 640, 1280 640 L 1280 720 L 0 720 Z" fill="#5a2d0c" opacity="0.14"/>
+  <path d="M0 660 C 200 630, 380 700, 560 672 C 740 645, 920 705, 1100 678 C 1200 663, 1280 680, 1280 680 L 1280 720 L 0 720 Z" fill="#5a2d0c" opacity="0.18"/>
+</svg>

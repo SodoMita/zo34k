@@ -14,6 +14,18 @@
 - ✨ **Тыквочка** — дух тыквы, которая растёт вместе с вами
 - 🌧️ Погода, сорняки, вороны, рынок и ночные события
 
+## Главное меню (как в TastyMilka)
+
+Стартовая сцена `scenes/title_screen.tscn` — точная копия TastyMilka с тыквенной темой:
+- Прозрачные тыквенно-стеклянные кнопки (`assets/ui/pumpkin_glass_theme.tres` — перекрашенный `milk_glass_theme`)
+- Тёплый осенний бэкдроп (`pumpkin_backdrop.svg` — градиенты #2a1406→#3b1f0b вместо молочних #fbfaf6)
+- Падающие листья-тыковки (`pumpkin_leaf.svg` вместо `milk_droplet.svg`, 12s ambient loop с вращением)
+- Маскот Тыквочка (`scenes/character/tykvo_mascot.tscn` — дыхание + прыжок greet, как Crema у Milka)
+- 4 кнопки: **Играть → vn_scene.tscn**, **Продолжить → последний save `user://saves/slot_*.json`**, **Настройки → shared SettingsStore (user://settings.json)**, **Выйти**
+- Наведение меняет эмоцию маскота (happy/surprised/thinking/sad), как в Milka
+- Запуск: `project.godot run/main_scene = res://scenes/title_screen.tscn` (было прямо vn_scene)
+- Проверено в `xvfb` и `sway` — скриншот `docs/title_pumpkin.webp`
+
 ## Геймплей
 
 Каждый день — выбор действий:

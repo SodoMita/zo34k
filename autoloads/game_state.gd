@@ -50,6 +50,10 @@ extends Node
 @export var secret_found: bool = false
 @export var ending: String = "" ## "" / "champion" / "cozy" / "market" / "missed"
 
+# --- Title screen continue support (from TastyMilka) ---
+@export var pending_resume_slot: int = -1
+@export var has_pending_resume: bool = false
+
 @export var story_seed: int = 777
 var input_values: Dictionary = {}
 var rng := RandomNumberGenerator.new()
@@ -92,6 +96,8 @@ func reset() -> void:
 	perfect_days = 0
 	secret_found = false
 	ending = ""
+	pending_resume_slot = -1
+	has_pending_resume = false
 	input_values = {}
 	_reseed()
 

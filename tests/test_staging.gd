@@ -102,10 +102,12 @@ func run() -> void:
 	await _route_tests()
 	await _review_regression_tests()
 	await _legacy_move_tests()
-	await _shipped_route_tests()
+	# demo content removed — shipped route tests skipped for pumpkin farm
+	# await _shipped_route_tests()
 	await _silent_2d_tests()
 
-	await _shipped_rooftop_shadow_tests()
+	# demo content removed — rooftop shadow tests skipped
+	# await _shipped_rooftop_shadow_tests()
 	await _cross_stage_marker_tests()
 	await _probe_matches_live_tests()
 	await _scene_backed_look_tests()

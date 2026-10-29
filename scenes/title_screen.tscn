@@ -1,0 +1,434 @@
+[gd_scene format=3 uid="uid://cfb4inboe1ofh"]
+
+[ext_resource type="Script" uid="uid://c8223fcsk16rg" path="res://scenes/title_screen.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://bckjh04a6b4vk" path="res://assets/ui/pumpkin_glass_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" uid="uid://d0o0lvlte8muy" path="res://assets/ui/pumpkin_backdrop.svg" id="3_backdrop"]
+[ext_resource type="Texture2D" uid="uid://disyvkjbef0iq" path="res://assets/ui/pumpkin_leaf.svg" id="4_droplet"]
+[ext_resource type="Texture2D" uid="uid://dlam8iuk670ub" path="res://assets/ui/pumpkin_trio.svg" id="5_trio"]
+[ext_resource type="Texture2D" uid="uid://bcr220hrms2ga" path="res://assets/ui/pumpkin_cluster.svg" id="6_cluster"]
+[ext_resource type="PackedScene" path="res://scenes/ui/settings_menu.tscn" id="7_settings"]
+[ext_resource type="FontFile" uid="uid://ctxcxi25fm0pu" path="res://assets/fonts/DejaVuSerif.ttf" id="8_serif"]
+[ext_resource type="FontFile" uid="uid://ex3s7gibjgfb" path="res://assets/fonts/DejaVuSerif-Bold.ttf" id="9_serifbold"]
+[ext_resource type="PackedScene" uid="uid://daisyspirit01" path="res://scenes/character/tykvo_mascot.tscn" id="10_crema"]
+[ext_resource type="Texture2D" uid="uid://d30dme00t8quw" path="res://assets/ui/icons/play.svg" id="11_play"]
+[ext_resource type="Texture2D" uid="uid://dmm5gjqrb802h" path="res://assets/ui/icons/resume.svg" id="12_resume"]
+[ext_resource type="Texture2D" uid="uid://d0gj5pd47s52v" path="res://assets/ui/icons/settings.svg" id="13_settings"]
+[ext_resource type="Texture2D" uid="uid://bitnaek2cnhwf" path="res://assets/ui/icons/quit.svg" id="14_quit"]
+
+[sub_resource type="Animation" id="Animation_ambient"]
+resource_name = "ambient"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Droplets/Drop1:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-120.0, 760.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Droplets/Drop2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-120.0, 1640.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Droplets/Drop3:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-120.0, 1200.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Droplets/Drop4:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-120.0, 2080.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Droplets/Drop5:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-120.0, 936.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Droplets/Drop6:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-120.0, 2520.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Droplets/Drop1:rotation")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.12, 0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Droplets/Drop2:rotation")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.15, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Droplets/Drop3:rotation")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.1, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Droplets/Drop4:rotation")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.12, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Droplets/Drop5:rotation")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.14, 0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Droplets/Drop6:rotation")
+tracks/11/interp = 2
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.1, 0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("TitleBlock:position:y")
+tracks/12/interp = 2
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 3, 6, 9, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [130.0, 124.0, 130.0, 136.0, 130.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ambient"]
+_data = {
+&"ambient": SubResource("Animation_ambient")
+}
+
+[node name="TitleScreen" type="Control" unique_id=385580647]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Backdrop" type="TextureRect" parent="." unique_id=1632969881]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_backdrop")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Droplets" type="Control" parent="." unique_id=966318432]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Drop1" type="TextureRect" parent="Droplets" unique_id=752793531]
+modulate = Color(1, 1, 1, 0.85)
+layout_mode = 0
+offset_left = 96.0
+offset_top = -120.0
+offset_right = 224.0
+offset_bottom = 8.0
+scale = Vector2(0.31, 0.31)
+mouse_filter = 2
+texture = ExtResource("4_droplet")
+
+[node name="Drop2" type="TextureRect" parent="Droplets" unique_id=752038027]
+modulate = Color(1, 1, 1, 0.8)
+layout_mode = 0
+offset_left = 305.0
+offset_top = -120.0
+offset_right = 433.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+mouse_filter = 2
+texture = ExtResource("4_droplet")
+
+[node name="Drop3" type="TextureRect" parent="Droplets" unique_id=283158626]
+modulate = Color(1, 1, 1, 0.85)
+layout_mode = 0
+offset_left = 536.0
+offset_top = -120.0
+offset_right = 664.0
+offset_bottom = 8.0
+scale = Vector2(0.42, 0.42)
+mouse_filter = 2
+texture = ExtResource("4_droplet")
+
+[node name="Drop4" type="TextureRect" parent="Droplets" unique_id=2129911790]
+modulate = Color(1, 1, 1, 0.8)
+layout_mode = 0
+offset_left = 748.0
+offset_top = -120.0
+offset_right = 876.0
+offset_bottom = 8.0
+scale = Vector2(0.25, 0.25)
+mouse_filter = 2
+texture = ExtResource("4_droplet")
+
+[node name="Drop5" type="TextureRect" parent="Droplets" unique_id=1289065051]
+modulate = Color(1, 1, 1, 0.85)
+layout_mode = 0
+offset_left = 1006.0
+offset_top = -120.0
+offset_right = 1134.0
+offset_bottom = 8.0
+scale = Vector2(0.36, 0.36)
+mouse_filter = 2
+texture = ExtResource("4_droplet")
+
+[node name="Drop6" type="TextureRect" parent="Droplets" unique_id=1971294650]
+modulate = Color(1, 1, 1, 0.8)
+layout_mode = 0
+offset_left = 1188.0
+offset_top = -120.0
+offset_right = 1316.0
+offset_bottom = 8.0
+scale = Vector2(0.17, 0.17)
+mouse_filter = 2
+texture = ExtResource("4_droplet")
+
+[node name="CornerTR" type="TextureRect" parent="." unique_id=1099846257]
+modulate = Color(1, 1, 1, 0.75)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -192.0
+offset_top = 14.0
+offset_right = -12.0
+offset_bottom = 194.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("6_cluster")
+stretch_mode = 5
+
+[node name="CornerBL" type="TextureRect" parent="." unique_id=1604952056]
+modulate = Color(1, 1, 1, 0.7)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -194.0
+offset_right = 192.0
+offset_bottom = -14.0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("6_cluster")
+stretch_mode = 5
+flip_h = true
+
+[node name="TykvoMascot" parent="." unique_id=92385162 instance=ExtResource("10_crema")]
+unique_name_in_owner = true
+position = Vector2(900, 560)
+scale = Vector2(0.78, 0.78)
+
+[node name="TitleBlock" type="VBoxContainer" parent="." unique_id=2120383124]
+layout_mode = 1
+offset_left = 96.0
+offset_top = 130.0
+offset_right = 520.0
+offset_bottom = 650.0
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="TitleBlock" unique_id=1647343109]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32, 0.31, 0.26, 1)
+theme_override_colors/font_outline_color = Color(0.99, 0.97, 0.9, 0.95)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("9_serifbold")
+theme_override_font_sizes/font_size = 92
+text = "ТЫКВЕННАЯ ФЕРМА"
+
+[node name="Subtitle" type="Label" parent="TitleBlock" unique_id=1105763057]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.44, 0.43, 0.37, 0.95)
+theme_override_colors/font_outline_color = Color(0.99, 0.97, 0.9, 0.9)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("8_serif")
+theme_override_font_sizes/font_size = 22
+text = "осенняя история о росте и тепле"
+
+[node name="Divider" type="TextureRect" parent="TitleBlock" unique_id=358591829]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_trio")
+stretch_mode = 5
+
+[node name="MenuBubble" type="PanelContainer" parent="TitleBlock" unique_id=1114178518]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"MilkBubble"
+
+[node name="Menu" type="HBoxContainer" parent="TitleBlock/MenuBubble" unique_id=334447238]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="StartButton" type="Button" parent="TitleBlock/MenuBubble/Menu" unique_id=852245589]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(76, 76)
+layout_mode = 2
+tooltip_text = "Begin the Story"
+theme_type_variation = &"IconButtonLarge"
+icon = ExtResource("11_play")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ContinueButton" type="Button" parent="TitleBlock/MenuBubble/Menu" unique_id=1910210321]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(76, 76)
+layout_mode = 2
+tooltip_text = "Continue"
+theme_type_variation = &"IconButtonLarge"
+icon = ExtResource("12_resume")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SettingsButton" type="Button" parent="TitleBlock/MenuBubble/Menu" unique_id=380475089]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(76, 76)
+layout_mode = 2
+tooltip_text = "Settings"
+theme_type_variation = &"IconButtonLarge"
+icon = ExtResource("13_settings")
+icon_alignment = 1
+expand_icon = true
+
+[node name="QuitButton" type="Button" parent="TitleBlock/MenuBubble/Menu" unique_id=1619949257]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(76, 76)
+layout_mode = 2
+tooltip_text = "Quit"
+theme_type_variation = &"IconButtonLarge"
+icon = ExtResource("14_quit")
+icon_alignment = 1
+expand_icon = true
+
+[node name="HowToPlayTitle" type="Label" parent="TitleBlock" unique_id=1192190886]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.37, 0.32, 1)
+theme_override_font_sizes/font_size = 18
+text = "Как играть"
+
+[node name="HowToPlay" type="Label" parent="TitleBlock" unique_id=1540940907]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.44, 0.43, 0.37, 0.95)
+theme_override_font_sizes/font_size = 14
+text = "Поливай · Удобряй · Общайся\nСобери тыкву-чемпиона к Хэллоуину! \nH · История   F5/F9 · Save   Esc · Пауза   F12 · Паника"
+autowrap_mode = 2
+
+[node name="Version" type="Label" parent="." unique_id=1523166023]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -38.0
+offset_right = 520.0
+offset_bottom = -12.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.5, 0.49, 0.43, 0.8)
+theme_override_fonts/font = ExtResource("8_serif")
+theme_override_font_sizes/font_size = 14
+text = "v1.0 · уютный симулятор · 30 дней до фестиваля"
+
+[node name="SettingsPanel" parent="." unique_id=1886091224 instance=ExtResource("7_settings")]
+
+[node name="Ambient" type="AnimationPlayer" parent="." unique_id=1906659449]
+libraries/ = SubResource("AnimationLibrary_ambient")

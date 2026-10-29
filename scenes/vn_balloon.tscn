@@ -269,6 +269,7 @@ sprites = Dictionary[String, Texture2D]({
 "tykvochka_surprised": ExtResource("25_ken_surprised"),
 "ken": ExtResource("22_ken"),
 "maya": ExtResource("8_maya"),
+"maya_sad": ExtResource("17_maya_sad"),
 "rook": ExtResource("10_rook"),
 "shadow": ExtResource("27_shadow")
 })

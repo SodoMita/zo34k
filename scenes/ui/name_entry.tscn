@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://dtqtjpydvfavu"]
+
+[ext_resource type="Script" uid="uid://db6biesk44gee" path="res://scenes/ui/name_entry.gd" id="1_name_entry"]
+[ext_resource type="Theme" uid="uid://bckjh04a6b4vk" path="res://assets/ui/pumpkin_glass_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" uid="uid://disyvkjbef0iq" path="res://assets/ui/pumpkin_leaf.svg" id="3_droplet"]
+[ext_resource type="Texture2D" uid="uid://dlam8iuk670ub" path="res://assets/ui/pumpkin_trio.svg" id="4_trio"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 28.0
+content_margin_top = 18.0
+content_margin_right = 28.0
+content_margin_bottom = 18.0
+bg_color = Color(0.99, 0.97, 0.92, 0.95)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.92, 0.82, 0.55, 0.95)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+shadow_color = Color(0.18, 0.12, 0.08, 0.28)
+shadow_size = 14
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_field"]
+content_margin_left = 14.0
+content_margin_top = 8.0
+content_margin_right = 14.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 0.99, 0.96, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.84, 0.74, 0.48, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="NameEntry" type="CanvasLayer" unique_id=966622390]
+layer = 110
+script = ExtResource("1_name_entry")
+
+[node name="Root" type="Control" parent="." unique_id=999632343]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+
+[node name="TopShade" type="ColorRect" parent="Root" unique_id=382536108]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 250.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0.14, 0.1, 0.18, 0.32)
+
+[node name="TopMargin" type="MarginContainer" parent="Root" unique_id=320019414]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 236.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 12
+
+[node name="Center" type="HBoxContainer" parent="Root/TopMargin" unique_id=2024151729]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Panel" type="PanelContainer" parent="Root/TopMargin/Center" unique_id=1741283408]
+custom_minimum_size = Vector2(660, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Rows" type="VBoxContainer" parent="Root/TopMargin/Center/Panel" unique_id=553971641]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="HBoxContainer" parent="Root/TopMargin/Center/Panel/Rows" unique_id=290581607]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="LeftDrop" type="TextureRect" parent="Root/TopMargin/Center/Panel/Rows/Header" unique_id=2136605761]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_droplet")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Root/TopMargin/Center/Panel/Rows/Header" unique_id=1624615147]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.24, 0.18, 0.15, 1)
+theme_override_font_sizes/font_size = 22
+text = "Milka leans in: \"What should I call you?\""
+horizontal_alignment = 1
+
+[node name="RightTrio" type="TextureRect" parent="Root/TopMargin/Center/Panel/Rows/Header" unique_id=492233910]
+custom_minimum_size = Vector2(32, 26)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_trio")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="InputRow" type="HBoxContainer" parent="Root/TopMargin/Center/Panel/Rows" unique_id=1499247508]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Field" type="LineEdit" parent="Root/TopMargin/Center/Panel/Rows/InputRow" unique_id=628294204]
+custom_minimum_size = Vector2(340, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.18, 0.13, 0.11, 1)
+theme_override_colors/font_placeholder_color = Color(0.55, 0.48, 0.42, 0.85)
+theme_override_styles/normal = SubResource("StyleBoxFlat_field")
+theme_override_styles/focus = SubResource("StyleBoxFlat_field")
+placeholder_text = "Type your name here..."
+max_length = 24
+clear_button_enabled = true
+
+[node name="Confirm" type="Button" parent="Root/TopMargin/Center/Panel/Rows/InputRow" unique_id=1042808803]
+custom_minimum_size = Vector2(128, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.12, 1)
+theme_override_colors/font_focus_color = Color(0.18, 0.12, 0.09, 1)
+theme_override_colors/font_pressed_color = Color(0.14, 0.09, 0.06, 1)
+theme_override_colors/font_hover_color = Color(0.14, 0.09, 0.06, 1)
+theme_override_colors/font_disabled_color = Color(0.52, 0.45, 0.38, 0.65)
+disabled = true
+text = "Tell Milka"
+
+[node name="Hint" type="Label" parent="Root/TopMargin/Center/Panel/Rows" unique_id=916164013]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36, 0.28, 0.22, 1)
+theme_override_font_sizes/font_size = 16
+text = "Milka is waiting for at least one character."
+horizontal_alignment = 1
+autowrap_mode = 2

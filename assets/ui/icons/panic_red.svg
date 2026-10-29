@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Danger is intentionally red even when the theme tints other SVG icons. -->
+  <path d="M12 2.6 22 20H2L12 2.6Z" fill="#c83e48" stroke="#a72834" stroke-width="1.4"/>
+  <path d="M12 8.5v5.7" stroke="#fffaf1" stroke-width="2.3"/>
+  <circle cx="12" cy="17.4" r="1.2" fill="#fffaf1"/>
+</svg>

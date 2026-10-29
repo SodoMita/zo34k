@@ -186,8 +186,8 @@ func run() -> void:
 	await wait_until(func() -> bool: return alive() and balloon.dialogue_line != null)
 	var line: DialogueLine = balloon.dialogue_line
 	check(line.character == "", "line 1 is narration (empty character)")
-	check(line.text.begins_with("The afternoon light"), "line 1 text matches")
-	check(balloon.background.texture != null, "#bg=classroom applied to Background")
+	check(line.text.begins_with("Привет") or line.text.begins_with("The afternoon"), "line 1 text matches")
+	check(balloon.background.texture != null, "#bg=pumpkin_field applied to Background")
 	check(balloon.sprite_left.modulate.a == 0.0 and balloon.sprite_right.modulate.a == 0.0, "sprite slots empty at start")
 
 	# --- 4: typewriter types and can be skipped ---

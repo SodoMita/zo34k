@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scenes/character/tykvo_mascot.gd" id="1_mascot"]
+[ext_resource type="Texture2D" path="res://assets/characters/tykvochka.webp" id="2_neutral"]
+[ext_resource type="Texture2D" path="res://assets/characters/tykvochka_smile.webp" id="3_happy"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira.webp" id="4_sad"]
+
+[sub_resource type="Animation" id="Animation_idle"]
+resource_name = "idle"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -10.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.04, 0.96), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.85, 0.85), Vector2(0.78, 0.78), Vector2(0.85, 0.85)]
+}
+
+[sub_resource type="Animation" id="Animation_greet"]
+resource_name = "greet"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.32, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 0.5, 1, 1.6),
+"update": 0,
+"values": [0.0, -80.0, -62.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.32, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 0.6, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.94, 1.06), Vector2(1.03, 0.97), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.12, -0.07, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mascot"]
+_data = {
+"idle": SubResource("Animation_idle"),
+"greet": SubResource("Animation_greet")
+}
+
+[node name="TykvoMascot" type="Node2D"]
+script = ExtResource("1_mascot")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 6)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("2_neutral")
+modulate = Color(0, 0, 0, 0.25)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_neutral")
+scale = Vector2(0.35, 0.35)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mascot")
+}
+autoplay = "idle"
+
+[node name="BlinkTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="BlinkEndTimer" type="Timer" parent="."]
+wait_time = 0.12
+one_shot = true

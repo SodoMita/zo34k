@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://53t523ax4uqg"
+path="res://.godot/imported/pumpkin.dialogue-784ba9241f8f020fc51208d369311b2c.tres"
+
+[deps]
+
+source_file="res://dialogue/pumpkin.dialogue"
+dest_files=["res://.godot/imported/pumpkin.dialogue-784ba9241f8f020fc51208d369311b2c.tres"]
+
+[params]
+
+defaults=true

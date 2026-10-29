@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220">
+  <defs>
+    <linearGradient id="clusterDrop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff8c2f"/>
+      <stop offset="1" stop-color="#c8c3b2"/>
+    </linearGradient>
+  </defs>
+  <path d="M150 30 C 150 30 172 66 172 80 A 22 22 0 1 1 128 80 C 128 66 150 30 150 30 Z"
+        fill="url(#clusterDrop)" stroke="#5a2d0c" stroke-width="1.6" stroke-opacity="0.55"/>
+  <path d="M95 84 C 95 84 112 112 112 123 A 17 17 0 1 1 78 123 C 78 112 95 84 95 84 Z"
+        fill="url(#clusterDrop)" stroke="#5a2d0c" stroke-width="1.4" stroke-opacity="0.5"/>
+  <path d="M55 140 C 55 140 67 160 67 168 A 12 12 0 1 1 43 168 C 43 160 55 140 55 140 Z"
+        fill="url(#clusterDrop)" stroke="#5a2d0c" stroke-width="1.2" stroke-opacity="0.45"/>
+  <circle cx="140" cy="140" r="4" fill="#f7eec0" opacity="0.8"/>
+  <circle cx="75" cy="75" r="3" fill="#ff8c2f" opacity="0.6"/>
+  <circle cx="184" cy="104" r="3" fill="#e8e4d5" opacity="0.7"/>
+  <circle cx="104" cy="176" r="2.5" fill="#e8e4d5" opacity="0.6"/>
+</svg>
