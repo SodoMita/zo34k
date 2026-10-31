@@ -41,7 +41,7 @@ elif water_level > 90:
     Земля хлюпает. Перелив опасен!
 
 Что делаем сегодня, {{player_name}}?
-- 🌱 Посадить семечко (есть {{seeds}}) if can_plant()
+- 🌱 Посадить семечко (есть {{seeds}}) [if can_plant() /]
     do do_plant()
     Ты аккуратно кладёшь семечко в тёплую землю. [#sfx=confirm]
     Пугало Тыквин хрипит с шеста: [#sprite=scarecrow:right, #focus=right]
@@ -50,10 +50,7 @@ elif water_level > 90:
     do befriend_scarecrow()
     Тыквин: Запомни, {{player_name}}, тыква — как дружба. Требует внимания каждый день.
     => after_action
-- 💧 Полить грядку (влага {{water_level}}%)
-    if water_cans <= 0 and weather != "дождь":
-        В лейке пусто! Нужно купить воды на рынке.
-        => day_loop
+- 💧 Полить грядку (влага {{water_level}}%) [if can_water() /]
     do do_water()
     Ты льёшь воду. Земля благодарно темнеет. [#bg=pumpkin_field, #sfx=confirm]
     if growth_stage == 2:
@@ -62,20 +59,17 @@ elif water_level > 90:
         Завязь округляется на глазах.
     Тыквин: Отлично льёшь! Не переусердствуй, болото тыква не любит. [#sprite=scarecrow:right]
     => after_action
-- 🌿 Удобрить (есть {{fertilizer}})
-    if fertilizer <= 0:
-        Удобрения нет. На рынке можно купить.
-        => day_loop
+- 🌿 Удобрить (есть {{fertilizer}}) [if fertilizer > 0 and growth_stage > 0 /]
     do do_fertilize()
     Ты рассыпаешь тёмное удобрение. Запах земли становится гуще. [#sfx=confirm]
     Мира (издалека): Правильно! Тыква — обжора, любит покушать!
     => after_action
-- 🧹 Прополоть сорняки if weeds
+- 🧹 Прополоть сорняки [if weeds /]
     do do_weed()
     Ты выдёргиваешь сорняки. Грядка дышит свободнее. [#sfx=confirm]
     Тыквочка: Спасибо! Мне стало легче! [#sprite=tykvochka:left]
     => after_action
-- 🐛 Обработать от вредителей if pests
+- 🐛 Обработать от вредителей [if pests /]
     Вредители исчезли после ухода. Листья снова крепкие.
     do pests = false
     health = mini(100, health + 10)
@@ -92,7 +86,7 @@ elif water_level > 90:
         Тыквочка: Я уже тяжёлая! Спасибо, что заботишься! Дружба — лучшее удобрение!
         do befriend_tykvochka()
     => after_action
-- 🎃 Собрать урожай! if can_harvest()
+- 🎃 Собрать урожай! [if can_harvest() /]
     do do_harvest()
     Ты срезаешь тыкву! Вес — {{best_weight}} кг, качество — {{quality}}! [#bg=festival, #sfx=save, #music=warm]
     Толпа (воображаемая) аплодирует! [#sprite=mira_smile:right]
@@ -140,19 +134,19 @@ if perfect_days >= 3 and growth_stage >= 4:
 Шумный осенний рынок. Пахнет яблоками, корицей и свежим хлебом. [#bg=market, #music=warm, #sprite=none:left, #sprite=mira:right]
 Торговец: Эй, {{player_name}} с {{farm_name}}! Что купишь?
 У тебя {{money}} монет.
-- Купить семена тыквы (8 монет) if money >= 8
+- Купить семена тыквы (8 монет) [if money >= 8 /]
     do do_buy_seeds(1)
     Торговец: Держи, отборные! Из них вырастают гиганты! [#sfx=confirm]
     => market
-- Купить 3 семечка (20 монет, выгодно) if money >= 20
+- Купить 3 семечка (20 монет, выгодно) [if money >= 20 /]
     do do_buy_seeds(3)
     Торговец: Оптовая цена для фермеров!
     => market
-- Купить удобрение (10 монет) if money >= 10
+- Купить удобрение (10 монет) [if money >= 10 /]
     do do_buy_fertilizer(1)
     Торговец: Лучший навоз в округе! Тыквы его обожают!
     => market
-- Купить воду, 2 лейки (5 монет) if money >= 5
+- Купить воду, 2 лейки (5 монет) [if money >= 5 /]
     do do_buy_water(2)
     Торговец: Чистая колодезная!
     => market
